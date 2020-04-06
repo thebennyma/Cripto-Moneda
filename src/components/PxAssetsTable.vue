@@ -77,7 +77,7 @@ export default {
 
   data() {
     return {
-      filter: "",
+      filter: ""
     };
   },
 
@@ -88,24 +88,24 @@ export default {
       }
 
       return this.assets.filter(
-        (a) =>
+        a =>
           a.symbol.toLowerCase().includes(this.filter.toLowerCase()) ||
           a.name.toLowerCase().includes(this.filter.toLowerCase())
       );
-    },
+    }
   },
 
   props: {
     assets: {
       type: Array,
-      default: () => [],
-    },
+      default: () => []
+    }
   },
   methods: {
     goToCoin(id) {
       this.$router.push({ name: "coin-detail", params: { id } });
-    },
-  },
+    }
+  }
 };
 </script>
 

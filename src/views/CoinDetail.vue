@@ -54,7 +54,7 @@
         :colors="['orange']"
         :min="min"
         :max="max"
-        :data="history.map((h) => [h.date, parseFloat(h.priceUsd).toFixed(2)])"
+        :data="history.map(h => [h.date, parseFloat(h.priceUsd).toFixed(2)])"
       />
     </template>
   </div>
@@ -70,28 +70,28 @@ export default {
     return {
       isLoading: false,
       asset: {},
-      history: [],
+      history: []
     };
   },
 
   computed: {
     min() {
       return Math.min(
-        ...this.history.map((h) => parseFloat(h.priceUsd).toFixed(2))
+        ...this.history.map(h => parseFloat(h.priceUsd).toFixed(2))
       );
     },
 
     max() {
       return Math.max(
-        ...this.history.map((h) => parseFloat(h.priceUsd).toFixed(2))
+        ...this.history.map(h => parseFloat(h.priceUsd).toFixed(2))
       );
     },
 
     avg() {
       return Math.abs(
-        ...this.history.map((h) => parseFloat(h.priceUsd).toFixed(2))
+        ...this.history.map(h => parseFloat(h.priceUsd).toFixed(2))
       );
-    },
+    }
   },
 
   created() {
@@ -109,8 +109,8 @@ export default {
           this.history = history;
         })
         .finally(() => (this.isLoading = false));
-    },
-  },
+    }
+  }
 };
 </script>
 

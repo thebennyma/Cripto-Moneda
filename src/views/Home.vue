@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       isLoading: false,
-      assets: [],
+      assets: []
     };
   },
 
@@ -23,8 +23,8 @@ export default {
     this.isLoading = true;
     api
       .getAssets()
-      .then((assets) => (this.assets = assets))
+      .then(assets => (this.assets = assets))
       .finally(() => (this.isLoading = false));
-  },
+  }
 };
 </script>
